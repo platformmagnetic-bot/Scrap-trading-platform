@@ -1,28 +1,22 @@
-import { Routes, Route } from "react-router-dom";
-import Landing from "./pages/Landing";
-import Onboarding from "./pages/Onboarding";
-import Marketplace from "./pages/Marketplace";
-import Dashboard from "./pages/Dashboard";
-import Profile from "./pages/Profile";
-import Nav from "./components/common/Nav";
-import Footer from "./components/common/Footer";
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Nav />
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/marketplace" element={<Marketplace />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
-  );
-}
+      <div className="p-6">
+            <h1 className="text-2xl font-bold text-blue-600">
+                    Magnetic Platform 
+                          </h1>
+                                <nav className="mt-4 space-x-4">
+                                        <Link to="/" className="text-gray-700 hover:text-blue-600">Home</Link>
+                                                <Link to="/about" className="text-gray-700 hover:text-blue-600">About</Link>
+                                                      </nav>
+                                                            <Routes>
+                                                                    <Route path="/" element={<p>Welcome to the Magnetic B2B platform!</p>} />
+                                                                            <Route path="/about" element={<p>This is the about page.</p>} />
+                                                                                  </Routes>
+                                                                                      </div>
+                                                                                        );
+                                                                                        }
 
-export default App;
+                                                                                        export default App;
