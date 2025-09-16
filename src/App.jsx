@@ -1,22 +1,32 @@
-import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Marketplace from "./pages/Marketplace";
+import Profile from "./pages/Profile";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
-      <div className="p-6">
-            <h1 className="text-2xl font-bold text-blue-600">
-                    Magnetic Platform 
-                          </h1>
-                                <nav className="mt-4 space-x-4">
-                                        <Link to="/" className="text-gray-700 hover:text-blue-600">Home</Link>
-                                                <Link to="/about" className="text-gray-700 hover:text-blue-600">About</Link>
-                                                      </nav>
-                                                            <Routes>
-                                                                    <Route path="/" element={<p>Welcome to the Magnetic B2B platform!</p>} />
-                                                                            <Route path="/about" element={<p>This is the about page.</p>} />
-                                                                                  </Routes>
-                                                                                      </div>
-                                                                                        );
-                                                                                        }
+      <Router>
+            <div className="flex flex-col min-h-screen">
+                    <Navbar />
+                            <main className="flex-grow p-4">
+                                      <Routes>
+                                                  <Route path="/" element={<Home />} />
+                                                              <Route path="/dashboard" element={<Dashboard />} />
+                                                                          <Route path="/marketplace" element={<Marketplace />} />
+                                                                                      <Route path="/profile" element={<Profile />} />
+                                                                                                  <Route path="/login" element={<Login />} />
+                                                                                                              <Route path="/signup" element={<Signup />} />
+                                                                                                                        </Routes>
+                                                                                                                                </main>
+                                                                                                                                        <Footer />
+                                                                                                                                              </div>
+                                                                                                                                                  </Router>
+                                                                                                                                                    );
+                                                                                                                                                    }
 
-                                                                                        export default App;
+                                                                                                                                                    export default App;
